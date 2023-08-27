@@ -1,3 +1,15 @@
+export type ShopifyExtension = {
+  cost: {
+    actualQueryCost: number;
+    requestedQueryCost: number;
+    throttleStatus: {
+      currentlyAvailable: number;
+      maximumAvailable: number;
+      restoreRate: number;
+    };
+  };
+};
+
 export type ShopifyProduct = {
   description: string;
   featuredImage: {

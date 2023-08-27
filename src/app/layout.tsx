@@ -2,6 +2,8 @@ import { Lato } from "next/font/google";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
@@ -17,7 +19,11 @@ type RootLayoutProps = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body className={lato.className}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 };
