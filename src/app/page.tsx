@@ -37,7 +37,6 @@ const getProducts = async (): Promise<GraphQLResponse> => {
                 url
                 width
               }
-              handle
               id
               priceRangeV2 {
                 minVariantPrice {
@@ -90,6 +89,8 @@ const HomePage = async () => {
                     width={product.featuredImage.width}
                     height={product.featuredImage.height}
                     className="h-96 w-full object-cover"
+                    placeholder="blur"
+                    blurDataURL={product.featuredImage.url}
                   />
                 </div>
 
