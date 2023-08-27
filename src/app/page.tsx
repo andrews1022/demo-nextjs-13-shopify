@@ -85,9 +85,9 @@ const HomePage = async () => {
       <h1 className="font-bold mb-10 text-3xl text-center">Shopify + Next.js 13!</h1>
 
       <h2 className="font-bold text-2xl mb-3">Our Products:</h2>
-      <ul className="grid grid-cols-3 ">
+      <ul className="grid grid-cols-3 gap-4">
         {json.data.products.nodes.map((product) => (
-          <li key={product.id} className="card">
+          <li key={product.id} className="border border-slate-200 rounded-md overflow-hidden">
             <div>
               <Image
                 src={product.featuredImage.url}
@@ -98,23 +98,26 @@ const HomePage = async () => {
               />
             </div>
 
-            <div className="card-body">
+            <div className="p-5">
               {product.tags.map((tag) => (
                 <span className="bg-yellow-400 font-bold py-1 px-3 rounded-full text-xs" key={tag}>
                   {tag}
                 </span>
               ))}
 
-              <h3 className="font-medium text-3xl">{product.title}</h3>
+              <h3 className="font-medium mt-3 text-3xl">{product.title}</h3>
 
               <h4>
                 {formatPrice(product.priceRangeV2.minVariantPrice.amount)}{" "}
                 {product.priceRangeV2.minVariantPrice.currencyCode}
               </h4>
 
-              <p>{product.description}</p>
+              <p className="my-3">{product.description}</p>
 
-              <Link href={`/product/${product.handle}`} className="text-blue-600">
+              <Link
+                href={`/product/${product.handle}`}
+                className="border border-blue-600 inline-block p-2 rounded-md text-blue-600 hover:bg-blue-600 hover:text-white ease-in-out duration-150"
+              >
                 View Product
               </Link>
             </div>
