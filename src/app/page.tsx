@@ -71,9 +71,7 @@ const HomePage = async () => {
   const json = await getProducts();
 
   return (
-    <main className="container mx-auto mt-10">
-      <h1 className="font-bold mb-10 text-3xl text-center">Shopify + Next.js 13!</h1>
-
+    <main className="container mx-auto">
       <div className="px-5">
         <h2 className="font-bold text-2xl mb-3">Our Products:</h2>
         <ul className="grid grid-cols-12 gap-4 pb-12">

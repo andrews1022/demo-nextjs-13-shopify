@@ -19,7 +19,7 @@ type RootLayoutProps = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
-      <body className={lato.className}>
+      <body className={`${lato.className} flex flex-col min-h-screen`}>
         <Navbar />
         {children}
         <Footer />
