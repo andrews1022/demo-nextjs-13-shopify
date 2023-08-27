@@ -1,11 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 
 // utils
+import { formatPrice } from "@/utils/formatPrice";
 import { gql } from "@/utils/gql";
 
 // types
 import type { ShopifyProduct } from "@/types";
-import Image from "next/image";
 
 type GraphQLResponse = {
   data: {
@@ -105,8 +106,14 @@ const HomePage = async () => {
               ))}
 
               <h3 className="font-medium text-3xl">{product.title}</h3>
-              <h4>{product.priceRangeV2.minVariantPrice.amount}</h4>
+
+              <h4>
+                {formatPrice(product.priceRangeV2.minVariantPrice.amount)}{" "}
+                {product.priceRangeV2.minVariantPrice.currencyCode}
+              </h4>
+
               <p>{product.description}</p>
+
               <Link href={`/product/${product.handle}`} className="text-blue-600">
                 View Product
               </Link>
