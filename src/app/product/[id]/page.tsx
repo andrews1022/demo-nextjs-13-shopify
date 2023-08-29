@@ -66,7 +66,7 @@ type SingleProdutPageProps = {
   };
 };
 
-const SingleProdutPage = async ({ params }: SingleProdutPageProps) => {
+const SingleProductPage = async ({ params }: SingleProdutPageProps) => {
   const json = await getProduct(params.id);
   const { product } = json.data;
 
@@ -113,4 +113,4 @@ const SingleProdutPage = async ({ params }: SingleProdutPageProps) => {
   );
 };
 
-export default SingleProdutPage;
+export default SingleProductPage;
